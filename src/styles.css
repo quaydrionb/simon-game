@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Microbe&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Permanent+Marker&display=swap');
 
 html {
-  background: url('../assets/background.png') no-repeat center center fixed;
+  background: url('../assets/arcade.jpeg') no-repeat center center fixed;
   box-sizing: border-box;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -11,22 +11,26 @@ html {
 }
 
 body {
-  color: yellow;
-  font-family: 'Rubik Microbe', sans-serif;
+  color: #b3b3b3; /* Light gray text color */
+  font-family: 'Orbitron', sans-serif;
   display: flex;
   justify-content: center;
   height: 100vh;
   align-items: center;
+  margin: 0;
 }
 
 main {
-  background-color: #000;
-  padding: 40px;
+  background-color: #1a1a2e; /* Dark background color */
+  padding: 30px;
+  border-radius: 10px; /* Rounded corners for a modern look */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); /* Shadow for depth */
 }
 
 h1 {
   text-align: center;
-  font-size: 40px;
+  font-size: 48px; /* Larger font size for headings */
+  color: yellow; /* Blue heading color */
 }
 
 .game-controls {
@@ -35,103 +39,88 @@ h1 {
 
 .start-button {
   display: inline-block;
-  height: 38px;
+  height: 48px;
   padding: 0 30px;
-  color: yellow;
+  color: #ffcc00;
   text-align: center;
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: bold; /* Bolder text for the start button */
   text-transform: uppercase;
-  background-color: transparent;
-  border: 1px solid yellow;
+  background-color: #333; /* Dark button background */
+  border: 2px solid #ffcc00;
+  border-radius: 5px;
   cursor: pointer;
+  transition: all 0.3s ease-in-out; /* Smooth transitions */
 }
 
 .start-button:hover {
-  color: greenyellow;
-  font-size: 18px;
-  border-color: greenyellow;
-  transform: rotate(5deg);
+  color: #1c1c1c; /* Dark text on hover */
+  background-color: #ffcc00; /* Yellow background on hover */
 }
 
 .status {
-  font-size: 22px;
+  font-size: 24px; /* Larger font size for status */
+  color: #fff; /* Blue text color */
+  margin-bottom: 20px; /* Added space below the status */
 }
 
 .pad-container {
   display: grid;
   grid-template-rows: 200px 200px;
   grid-template-columns: 200px 200px;
-  grid-gap: 5px;
+  grid-gap: 10px; /* Increased gap between pads */
   margin: 20px;
 }
 
+/* Game Pad Styles */
+.pad {
+  border-radius: 20px; /* Rounded corners for pads */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+  transition: transform 0.2s ease-in-out; /* Smooth transform on hover/active */
+}
+
+.pad:hover,
+.pad:focus {
+  transform: scale(1.05); /* Slight scale-up on hover/focus */
+}
+
+.pad:active,
+.pad.activated {
+  transform: scale(0.95); /* Slight scale-down on click */
+}
+
+
+
 .pad-red {
-  border-top-left-radius: 200px;
-  background-color: red;
+  background-color: #ff3d3d; /* Red pad color */
 }
 
-.pad-red:hover,
-.pad-red:focus {
-  background-color: #ff451a;
-  transform: rotate(-5deg);
-}
-
-.pad-red:active,
-.pad-red.activated {
-  background-color: #ff5c36;
-  transform: translateY(10px);
+.pad-red:active, .pad-red.activated {
+  background-color: #f58a8a;
 }
 
 .pad-green {
-  border-top-right-radius: 200px;
-  background-color: green;
+  background-color: #5aff78; /* Green pad color */
 }
 
-.pad-green:hover,
-.pad-green:focus {
-  background-color: #8cc218;
-  transform: rotate(5deg);
-}
-
-.pad-green:active,
-.pad-green.activated {
-  background-color: #a0ea00;
-  transform: translateY(10px);
+.pad-green:active, .pad-green.activated {
+  background-color: #08801e;
 }
 
 .pad-yellow {
-  border-bottom-right-radius: 200px;
-  background-color: yellow;
+  background-color: #fffc59; /* Yellow pad color */
 }
 
-.pad-yellow:hover,
-.pad-yellow:focus {
-  background-color: #ffb900;
-  transform: rotate(5deg);
-}
-
-.pad-yellow:active,
-.pad-yellow.activated {
-  background-color: #ffca3d;
-  transform: translateY(10px);
+.pad-yellow:active, .pad-yellow.activated {
+  background-color: #e7c641;
 }
 
 .pad-blue {
-  border-bottom-left-radius: 200px;
-  background-color: blue;
+  background-color: #5fc2ff; /* Blue pad color */
 }
 
-.pad-blue:hover,
-.pad-blue:focus {
-  background-color: #139ddd;
-  transform: rotate(5deg);
-}
-
-.pad-blue:active,
-.pad-blue.activated {
-  background-color: #2bbcff;
-  transform: translateY(10px);
+.pad-blue:active, .pad-blue.activated {
+  background-color: #2b5d7c;
 }
 
 .hidden {
@@ -144,19 +133,19 @@ h1 {
 
 @media only screen and (max-width: 768px) {
   body {
-    font-size: 14px; /* Adjust the font size for better readability on smaller screens */
+    font-size: 16px;
   }
 
   main {
-    padding: 20px; /* Decrease the padding for the main container on smaller screens */
+    padding: 20px;
   }
 
   .pad-container {
-    grid-template-rows: 150px 150px; /* Adjust the grid layout for pads on smaller screens */
+    grid-template-rows: 150px 150px;
     grid-template-columns: 150px 150px;
   }
 
   .start-button {
-    font-size: 12px; /* Adjust the font size of the start button on smaller screens */
+    font-size: 14px;
   }
 }
