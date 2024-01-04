@@ -141,3 +141,22 @@ h1 {
 .unclickable {
   pointer-events: none;
 }
+
+@media only screen and (max-width: 768px) {
+  body {
+    font-size: 14px; /* Adjust the font size for better readability on smaller screens */
+  }
+
+  main {
+    padding: 20px; /* Decrease the padding for the main container on smaller screens */
+  }
+
+  .pad-container {
+    grid-template-rows: 150px 150px; /* Adjust the grid layout for pads on smaller screens */
+    grid-template-columns: 150px 150px;
+  }
+
+  .start-button {
+    font-size: 12px; /* Adjust the font size of the start button on smaller screens */
+  }
+}
