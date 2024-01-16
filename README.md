@@ -30,5 +30,4 @@ While the current version of the Simon Says Game provides a functional and enjoy
 - **Sound and Visual Effects:** Enhance the gaming experience with additional sound effects and visual feedback for correct and incorrect moves.
 - **Responsive Design:** Optimize the game for various screen sizes and devices to ensure a seamless experience across platforms.
 
-Contributions to the project are welcome, and there are opportunities to explore and expand the game's features for an even more captivating experience.
 
